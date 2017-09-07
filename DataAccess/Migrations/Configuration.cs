@@ -4,15 +4,21 @@ namespace DataAccess.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.HierarchModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.DataContext>
     {
+        /*
+         * Please READ THIS:
+         * 
+         * after calling "update-database" the update will be found in the compile dir /bin/debug
+         */
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+            var migrationGenerator = new SQLiteMigrationSqlGenerator();
+            SetSqlGenerator("System.Data.SQLite", migrationGenerator);
         }
 
-        protected override void Seed(DataAccess.HierarchModel context)
+        protected override void Seed(DataAccess.DataContext context)
         {
             //  This method will be called after migrating to the latest version.
 

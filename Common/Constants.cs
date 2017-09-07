@@ -2,8 +2,8 @@
 {
     public static class Constants
     {
-        public static string DatabaseName = "hierarch.db";
+        public static string DatabaseName = "SQLiteDatabase.db";
 
-        public static string DefaultDatabasePath = @"..\..\..\DataAccess\" + DatabaseName;
+        public static string DefaultDatabasePath = @"..\..\..\DataAccess\Migrations\" + DatabaseName;
     }
 }

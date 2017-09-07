@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Common;
 using DataAccess;
-using DataAccess.DataTypes;
 
 namespace MainConsole
 {
@@ -36,21 +36,9 @@ namespace MainConsole
         {
             init();
 
-            using (var ctx = new HierarchModel())
+            using (var ctx = new DataContext())
             {
-                var stud = new Student { StudentName = "Darouso" };
-
-                ctx.Students.Add(stud);
-                ctx.SaveChanges();
-            }
-
-            Console.ReadLine();
-
-            using (var ctx = new HierarchModel())
-            {
-                var result = ctx.Students.Find(1);
-
-                Console.WriteLine("Found {0}", result?.StudentName);
+                Console.WriteLine(ctx.AppInfos.Count());
             }
 
             Console.ReadLine();

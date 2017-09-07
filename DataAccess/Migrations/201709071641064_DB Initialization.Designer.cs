@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initialmigration : IMigrationMetadata
+    public sealed partial class DBInitialization : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DBInitialization));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709031958001_initial migration"; }
+            get { return "201709071641064_DB Initialization"; }
         }
         
         string IMigrationMetadata.Source

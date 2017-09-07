@@ -61,12 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\Standard.cs" />
-    <Compile Include="DataTypes\Student.cs" />
-    <Compile Include="HierarchModel.cs" />
-    <Compile Include="Migrations\201709031958001_initial migration.cs" />
-    <Compile Include="Migrations\201709031958001_initial migration.Designer.cs">
-      <DependentUpon>201709031958001_initial migration.cs</DependentUpon>
+    <Compile Include="DataTypes\AppInfo.cs" />
+    <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\201709071641064_DB Initialization.cs" />
+    <Compile Include="Migrations\201709071641064_DB Initialization.Designer.cs">
+      <DependentUpon>201709071641064_DB Initialization.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,14 +74,14 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="hierarch.db" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="SQLiteDatabase.db" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709031958001_initial migration.resx">
-      <DependentUpon>201709031958001_initial migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709071641064_DB Initialization.resx">
+      <DependentUpon>201709071641064_DB Initialization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
