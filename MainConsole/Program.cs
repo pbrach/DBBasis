@@ -8,33 +8,22 @@ namespace MainConsole
 {
     class Program
     {
-        private static void init()
+        private static void Init()
         {
-            GetCopyDefaultDBFile();
-
             SetDatadirectory();
-        }
-
-        private static void GetCopyDefaultDBFile()
-        {
-            if (!File.Exists(Constants.DatabaseName))
-            {
-
-                File.Copy(Constants.DefaultDatabasePath, Constants.DatabaseName);
-            }
         }
 
         private static void SetDatadirectory()
         {
-            string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string path = (System.IO.Path.GetDirectoryName(executable));
+            var executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var path = (Path.GetDirectoryName(executable));
 
-            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            AppDomain.CurrentDomain.SetData("DataDirectory", path + @"\..\..\..");
         }
 
         static void Main(string[] args)
         {
-            init();
+            Init();
 
             using (var ctx = new DataContext())
             {
