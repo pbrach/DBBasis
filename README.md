@@ -1,4 +1,5 @@
-# DBBasis
+# SQLite-CodeFirst-Base
+
 Ever wanted a solution with a integrated realtional database that needs zero configuration?
 
 If so: clone this, hit build and your SQLite database is readily accessible via entity framework database first.
