@@ -1,3 +1,4 @@
+using System.Data.Entity.Infrastructure;
 using System.Data.SQLite.EF6.Migrations;
 
 namespace DataAccess.Migrations
@@ -14,8 +15,12 @@ namespace DataAccess.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            var migrationGenerator = new SQLiteMigrationSqlGenerator();
-            SetSqlGenerator("System.Data.SQLite", migrationGenerator);
+            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+
+            // ugly hard coded local sting that i can not get rid of
+            const string connectionString = @"data source=d:\haphi\DBBasis\Resources\SQLiteDatabase.db";
+
+            this.TargetDatabase = new DbConnectionInfo(connectionString, "System.Data.SQLite.EF6");
         }
 
         protected override void Seed(DataAccess.DataContext context)

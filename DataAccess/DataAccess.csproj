@@ -77,7 +77,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="SQLiteDatabase.db" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709071641064_DB Initialization.resx">
